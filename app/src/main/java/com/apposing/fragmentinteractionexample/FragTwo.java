@@ -8,19 +8,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class FragTwo extends Fragment {
 
     FragmentInteractionListener fragListener;
 
+    private static final String TEXT_PARAM = "TEXT_PARAM";
+    private String textFromFragOne;
+
     public FragTwo() {
         // Required empty public constructor
     }
 
-    public static FragTwo newInstance(String param1, String param2) {
+    public static FragTwo newInstance(String text) {
         FragTwo fragment = new FragTwo();
         Bundle args = new Bundle();
+        args.putString(TEXT_PARAM, text);
         fragment.setArguments(args);
         return fragment;
     }
@@ -36,7 +41,7 @@ public class FragTwo extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-
+            textFromFragOne = getArguments().getString(TEXT_PARAM);
         }
     }
 
@@ -47,6 +52,9 @@ public class FragTwo extends Fragment {
 
 
         Button button = (Button) view.findViewById(R.id.button);
+        TextView textView = (TextView) view.findViewById(R.id.textview);
+
+        textView.setText(textFromFragOne);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

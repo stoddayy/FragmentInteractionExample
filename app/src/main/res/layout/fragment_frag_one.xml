@@ -1,13 +1,22 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context="com.apposing.fragmentinteractionexample.FragOne">
 
-   <Button
-       android:text="This is frag one"
-       android:id="@+id/button"
-       android:layout_width="100dp"
-       android:layout_height="100dp" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/edittext"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="This is frag one" />
+
+</LinearLayout>

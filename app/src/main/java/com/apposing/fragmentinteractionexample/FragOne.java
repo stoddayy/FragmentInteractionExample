@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 
 public class FragOne extends Fragment {
@@ -47,11 +48,12 @@ public class FragOne extends Fragment {
 
 
         Button button = (Button) view.findViewById(R.id.button);
+        final EditText editText = (EditText) view.findViewById(R.id.edittext);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                fragListener.setFragTwo();
+                fragListener.setFragTwo(editText.getText().toString());
             }
         });
 

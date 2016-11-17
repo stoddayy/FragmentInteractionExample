@@ -7,6 +7,6 @@ package com.apposing.fragmentinteractionexample;
 public interface FragmentInteractionListener {
 
     void setFragOne();
-    void setFragTwo();
+    void setFragTwo(String text);
 
 }

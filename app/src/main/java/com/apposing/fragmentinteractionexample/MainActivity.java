@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
     }
 
     @Override
-    public void setFragTwo() {
+    public void setFragTwo(String text) {
         FragmentTransaction transaction = fragMan.beginTransaction();
-        transaction.replace(frameLayout.getId(), FragTwo.newInstance("", ""));
+        transaction.replace(frameLayout.getId(), FragTwo.newInstance(text));
         transaction.commit();
     }
 }
